@@ -268,7 +268,7 @@ static int xoauth_client_mech_new(void *glob_context __attribute__((unused)),
     return SASL_OK;
 }
 
-int generate_xoauth_token (char *token, const char *email, const char *service) {
+int __attribute__((visibility("hidden"))) generate_xoauth_token (char *token, const char *email, const char *service) {
   char url_str[1024];
   char *url = url_str;
   char *c_key = "anonymous";    /* consumer key */
